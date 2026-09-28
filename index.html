@@ -4,13 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Borrow $500 for Just $1* | GoLoans</title>
-<meta name="description" content="Why pay payday loan fees? Borrow $500, repay within 14 days and pay just $1 in fees.* Apply online with GoLoans.">
-<link rel="canonical" href="https://goloans.ca/1-dollar-loan/"><!-- CONFIRM: final URL -->
+<meta name="description" content="Borrow $500 and pay it off within 14 days: your total cost is $1.* Loan terms 91 to 120 days. Max APR 31.99%. Apply online with GoLoans.">
+<!-- Paid-traffic landing page: kept out of organic search so it does not compete with goloans.ca pages. Google Ads is unaffected. Remove to allow indexing. -->
+<meta name="robots" content="noindex, follow">
 <meta property="og:title" content="Borrow $500 for Just $1* | GoLoans">
-<meta property="og:description" content="Get $500. Pay it back within 14 days. Your fee: $1. Yes. Actually $1.">
+<meta property="og:description" content="Get $500. Pay it off within 14 days and your total cost is $1.* Yes. Actually $1.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://goloans.ca/1-dollar-loan/">
 <meta name="theme-color" content="#0F2F4F">
+<!-- Google Tag Manager (goloans.ca container) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MR27TSS');</script>
+<!-- End Google Tag Manager -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -278,6 +281,27 @@ a{color:inherit}
 .steps p{margin:0;color:var(--ink-2);max-width:32ch}
 
 /* ============================================================
+   TERMS — required disclosures, shown prominently
+   ============================================================ */
+.terms{padding:0 0 clamp(3.5rem,8vw,6rem)}
+.terms-card{background:var(--white);border-radius:20px;padding:clamp(1.5rem,4vw,3rem);
+  box-shadow:0 1px 0 #fff inset, 0 20px 40px -24px rgba(15,47,79,.35), 0 0 0 1px rgba(22,32,43,.06)}
+.figs{display:grid;gap:1px;margin:1.8rem 0 2.2rem;background:var(--line);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+@media (min-width:720px){.figs{grid-template-columns:repeat(3,1fr)}}
+.figs div{background:var(--paper);padding:1.2rem 1.3rem}
+.figs dt{font-weight:600;color:var(--ink-2);font-size:.95rem}
+.figs dd{margin:.3rem 0 0;font:900 clamp(1.9rem,4vw,2.6rem)/1 var(--display);font-stretch:70%;color:var(--brand-deep)}
+.figs dd small{display:block;margin-top:.4rem;font:500 .85rem/1.35 var(--text);color:var(--ink-3)}
+.rep{display:grid;gap:1.5rem}
+@media (min-width:900px){.rep{grid-template-columns:1fr 1fr;gap:3rem;align-items:start}}
+.rep h3{margin:0 0 .4rem;font:800 1.35rem/1.15 var(--display);font-stretch:90%}
+.rep p{margin:0;color:var(--ink-2);max-width:52ch}
+.rep .r-rows{margin:0}
+.rep .total{border-top:2px dashed var(--line);margin-top:.3rem;padding-top:.7rem}
+.rep .total .amt{font-size:1.25rem}
+.fine a,.foot a{text-underline-offset:2px}
+
+/* ============================================================
    FAQ — the catch, answered
    ============================================================ */
 .faq{background:var(--white);padding:clamp(3.5rem,8vw,6.5rem) 0}
@@ -349,6 +373,7 @@ a{color:inherit}
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MR27TSS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="top">
   <div class="wrap">
@@ -370,7 +395,7 @@ a{color:inherit}
       <div>
         <p class="lead" data-v="lead">Need $500?</p>
         <h1 class="h1" id="hero-title" data-v="h1">What if borrowing it cost just <span class="price">$1?</span></h1>
-        <p class="support" data-v="support">Borrow $500, repay it within 14 days, and your only fee is $1.* Why pay payday loan fees when you don't have to?</p>
+        <p class="support" data-v="support">Borrow $500 and pay it off within 14 days. Your total cost: $1.* Why pay payday loan fees when you don't have to?</p>
 
         <span class="well">
           <a class="btn" id="hero-cta" data-cta="hero" href="https://onyx.goloans.ca/clients/application/create/v1/step/identification/">
@@ -379,7 +404,7 @@ a{color:inherit}
         </span>
         <!-- CONFIRM: "about 2 minutes" and "no hard credit check" match current underwriting -->
         <p class="cta-note">Apply online in about 2 minutes. No hard credit check.</p>
-        <p class="fine">*Offer applies when the loan is repaid within 14 days. One $1 debit fee applies. Optional express deposit fee applies only if selected. Eligibility and terms apply.</p>
+        <p class="fine">*The $1 total cost applies when the full $500 is repaid within 14 days of funding, using a single payment with one $1 debit fee. Loan terms are 91 to 120 days. Maximum APR 31.99%. <a href="#terms">See full terms and a representative example.</a> Optional express deposit fee applies only if selected. Eligibility and terms apply.</p>
       </div>
 
       <div class="printer" aria-label="Example loan receipt">
@@ -392,13 +417,13 @@ a{color:inherit}
             </div>
             <ul class="r-rows">
               <li><span>Borrowed today</span><span class="leader" aria-hidden="true"></span><span class="amt">$500.00</span></li>
-              <li><span>Repaid by <span data-repay>in 14 days</span></span><span class="leader" aria-hidden="true"></span><span class="amt">$500.00</span></li>
+              <li><span>Paid off by <span data-repay>in 14 days</span></span><span class="leader" aria-hidden="true"></span><span class="amt">$500.00</span></li>
               <li><span>Debit fee</span><span class="leader" aria-hidden="true"></span><span class="amt">$1.00</span></li>
             </ul>
             <div class="r-total">
               <p>Your cost to borrow</p>
               <div class="r-big" aria-label="One dollar">$1<sup>.00</sup></div>
-              <p class="r-foot">*When repaid within 14 days.<br>Optional express deposit fee not included.</p>
+              <p class="r-foot">*When the $500 is paid off within 14 days.<br>Loan term 91 to 120 days. Max APR 31.99%.<br>Optional express deposit fee not included.</p>
               <div class="barcode" aria-hidden="true"></div>
             </div>
           </div>
@@ -421,7 +446,7 @@ a{color:inherit}
             <div class="bar-track" aria-hidden="true"><div class="bar-fill"></div></div>
           </li>
           <li class="bar--go">
-            <div class="bar-label"><span>GoLoans, $500 repaid within 14 days</span><strong>$1*</strong></div>
+            <div class="bar-label"><span>GoLoans, $500 paid off within 14 days</span><strong>$1*</strong></div>
             <div class="bar-track" aria-hidden="true"><div class="bar-fill"></div></div>
           </li>
         </ul>
@@ -464,10 +489,41 @@ a{color:inherit}
           <p>Once you're approved, the money is sent to your bank account by e-Transfer.</p>
         </li>
         <li>
-          <h3>Repay within 14 days</h3>
-          <p>Pay back $500 by <strong data-repay-long>14 days from today</strong>. Your fee is $1. That's the whole cost.*</p>
+          <h3>Pay it off within 14 days</h3>
+          <p>Pay back the $500 by <strong data-repay-long>14 days from today</strong> and your total cost is $1.* Need longer? Your loan runs 91 to 120 days.</p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- TERMS / REQUIRED DISCLOSURES
+       CONFIRM every figure below against the new product's contract before launch. -->
+  <section class="terms" id="terms" aria-labelledby="terms-title">
+    <div class="wrap">
+      <div class="terms-card">
+        <h2 class="h2 h2--mixed" id="terms-title">The full terms, up front</h2>
+        <p class="body-lg">Your GoLoans loan has a 91 to 120 day term. The $1 offer is a reward for paying it off early, within 14 days.</p>
+        <dl class="figs">
+          <div><dt>Repayment period</dt><dd>91 to 120 days<small>Minimum 91 days, maximum 120 days. Pay off early anytime.</small></dd></div>
+          <div><dt>Maximum APR</dt><dd>31.99%<small>Includes interest and all fees, calculated on an annual basis.</small></dd></div>
+          <div><dt>$1 early payoff offer</dt><dd>$1 total<small>When the full $500 is repaid in one payment within 14 days of funding.</small></dd></div>
+        </dl>
+        <div class="rep">
+          <div>
+            <h3>Representative example</h3>
+            <p>What a $500 loan costs if it's repaid on the standard schedule instead of paid off within 14 days.</p>
+          </div>
+          <ul class="r-rows">
+            <li><span>Amount borrowed</span><span class="leader" aria-hidden="true"></span><span class="amt">$500.00</span></li>
+            <li><span>Term</span><span class="leader" aria-hidden="true"></span><span class="amt">3 months</span></li>
+            <li><span>Payments</span><span class="leader" aria-hidden="true"></span><span class="amt">Bi-weekly</span></li>
+            <li><span>Nominal interest rate</span><span class="leader" aria-hidden="true"></span><span class="amt">16.63%</span></li>
+            <li><span>Guarantor fee</span><span class="leader" aria-hidden="true"></span><span class="amt">$250.00</span></li>
+            <li><span>Fee per payment debit</span><span class="leader" aria-hidden="true"></span><span class="amt">$1.00</span></li>
+            <li class="total"><span><strong>Total repaid</strong></span><span class="leader" aria-hidden="true"></span><span class="amt">$753.64</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -482,12 +538,16 @@ a{color:inherit}
         <details>
           <summary>So what's the catch?<span class="pm" aria-hidden="true"></span></summary>
           <!-- CONFIRM: no guarantor/surety fee applies to this 14-day offer -->
-          <p>The only condition is timing. Repay the $500 within 14 days and a single $1 debit fee is your whole cost of borrowing. Every cost is listed in your agreement before you sign, so nothing shows up later.</p>
+          <p>The only condition is timing. Your loan has a 91 to 120 day term, and if you pay off the full $500 within 14 days, a single $1 debit fee is your whole cost of borrowing. Every cost is listed in your agreement before you sign, so nothing shows up later.</p>
         </details>
         <details>
-          <summary>What if I can't repay within 14 days?<span class="pm" aria-hidden="true"></span></summary>
+          <summary>What if I can't pay it off within 14 days?<span class="pm" aria-hidden="true"></span></summary>
           <!-- CONFIRM: exact wording of what applies after day 14 -->
-          <p>Then the $1 offer no longer applies and your loan's standard terms do. You'll see those terms, including all costs, before you sign. Not sure about your timing? Call us first at <a href="tel:18664784119" data-call>1-866-478-4119</a>.</p>
+          <p>That's fine. You keep repaying on your regular schedule over the loan's 91 to 120 day term, and the standard cost of borrowing applies instead of the $1 offer. <a href="#terms">See the representative example.</a> Questions? Call us at <a href="tel:18664784119" data-call>1-866-478-4119</a>.</p>
+        </details>
+        <details>
+          <summary>How long is the loan?<span class="pm" aria-hidden="true"></span></summary>
+          <p>Every loan has a term of 91 to 120 days, depending on how often you're paid. You can pay it off early at any time, and paying the full $500 within 14 days is what gets you the $1 total cost.</p>
         </details>
         <details>
           <summary>Is express deposit required?<span class="pm" aria-hidden="true"></span></summary>
@@ -541,14 +601,14 @@ a{color:inherit}
       <span class="well well--dark">
         <a class="btn" id="close-cta" data-cta="closing" href="https://onyx.goloans.ca/clients/application/create/v1/step/identification/"><span class="coin" aria-hidden="true">$</span>Get my $500</a>
       </span>
-      <p class="fine">*Offer applies when the loan is repaid within 14 days. One $1 debit fee applies. Optional express deposit fee applies only if selected. Eligibility and terms apply.</p>
+      <p class="fine">*The $1 total cost applies when the full $500 is repaid within 14 days of funding, using a single payment with one $1 debit fee. Loan terms are 91 to 120 days. Maximum APR 31.99%. <a href="#terms">See full terms and a representative example.</a> Optional express deposit fee applies only if selected. Eligibility and terms apply.</p>
     </div>
   </section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <p>*Offer applies when the loan is repaid within 14 days. One $1 debit fee applies. Optional express deposit fee applies only if selected. Eligibility and terms apply. Approval is not guaranteed. All costs are disclosed in your loan agreement before you sign.</p>
+    <p>*The $1 total cost of borrowing applies when the full $500 is repaid in a single payment within 14 days of funding; one $1 debit fee applies. All loans have a repayment period of 91 to 120 days. Maximum APR 31.99%, including interest and all fees. Representative example: a $500 loan repaid bi-weekly over 3 months at a nominal interest rate of 16.63%, with a $250 guarantor fee and a $1 fee per payment debit, results in a total repayment of $753.64. Optional express deposit fee applies only if selected. Eligibility and terms apply. Approval is not guaranteed. All costs are disclosed in your loan agreement before you sign.</p>
     <p>Payday loan comparison is based on the maximum cost of borrowing permitted under the Criminal Code of Canada ($14 per $100 borrowed, effective January 1, 2025). Actual payday loan costs vary by lender.</p>
     <p>Please borrow responsibly. GoLoans.ca, 555-21, 10405 Jasper Ave, Edmonton, AB T5J 3S2. <a href="tel:18664784119" data-call>1-866-478-4119</a></p>
     <p class="legal"><a href="https://goloans.ca/privacy-policy/">Privacy Policy</a><a href="https://goloans.ca/terms-of-service/">Terms of Service</a><span>© <span data-year>2026</span> GoLoans.ca</span></p>
@@ -556,7 +616,7 @@ a{color:inherit}
 </footer>
 
 <div class="dock" id="dock" aria-hidden="true">
-  <div class="dock-text">$500 for $1*<small>Repay within 14 days</small></div>
+  <div class="dock-text">$500 for $1*<small>Pay it off within 14 days</small></div>
   <a class="btn btn--sm" data-cta="sticky" tabindex="-1" href="https://onyx.goloans.ca/clients/application/create/v1/step/identification/">Get my $500</a>
 </div>
 
@@ -608,7 +668,7 @@ a{color:inherit}
     var set = function(key, html){ var el = document.querySelector('[data-v="'+key+'"]'); if (el) el.innerHTML = html; };
     set("lead", "Still need $500?");
     set("h1", 'You already know the number: <span class="price">$1.</span>');
-    set("support", "Repay within 14 days and that's your fee.*");
+    set("support", "Pay it off within 14 days and that's your total cost.*");
     set("cta", "Apply now");
     track("variant_view", {variant: "return"});
   }
@@ -616,9 +676,9 @@ a{color:inherit}
   /* ---------- Payday check ---------- */
   var dueLong = due.toLocaleDateString("en-CA", longFmt);
   var answers = {
-    "1": 'Borrow $500 today and repay it on payday. That\'s well inside 14 days, so your fee is <span class="figure">$1</span>.',
-    "2": 'Repay the $500 on payday, before ' + dueLong + ', and your fee is <span class="figure">$1</span>.',
-    "3": 'The $1 fee needs the $500 back by ' + dueLong + '. You can still apply, and you\'ll see the standard loan terms before you sign anything.'
+    "1": 'Borrow $500 today and pay it off on payday. That\'s well inside 14 days, so your total cost is <span class="figure">$1</span>.',
+    "2": 'Pay off the $500 on payday, before ' + dueLong + ', and your total cost is <span class="figure">$1</span>.',
+    "3": 'No problem. Your loan runs 91 to 120 days, so you can repay on your regular schedule. The $1 total applies if you pay it off by ' + dueLong + '; otherwise the standard cost applies. <a href="#terms">See the full terms.</a>'
   };
   var keys = document.querySelectorAll("[data-pay]");
   var box = document.getElementById("answer"), txt = document.getElementById("answer-text");
