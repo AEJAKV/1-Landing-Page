@@ -179,13 +179,19 @@ a{color:inherit}
   .hero-copy{display:flex;flex-direction:column;align-items:center;text-align:center}
   .hero .support,.hero .fine{max-width:38ch;margin-left:auto;margin-right:auto}
 
-  /* Grid/star pattern: drop the image in image-assets/ and point this at it.
-     Sizing/position are ready to go as-is. */
+  /* Green gradient base. Grid/star pattern: drop the image in image-assets/
+     and it layers on top of the gradient — sizing/position are ready as-is. */
   .hero{
     padding-bottom:0;
     overflow-x:hidden;
-    background:var(--white) url('image-assets/hero-bg-mobile.png') top center / cover no-repeat;
+    background:
+      url('image-assets/hero-bg-mobile.png') top center / cover no-repeat,
+      linear-gradient(180deg, #25A158 0%, #2C8763 100%);
   }
+  .hero-copy .lead{color:rgba(255,255,255,.85)}
+  .hero-copy .h1{color:var(--white)}
+  .hero-copy .support{color:rgba(255,255,255,.9)}
+  .hero-copy .fine{color:var(--white);opacity:.75}
 
   /* Gray shelf holds the receipt and breaks out to full viewport width, rising
      over the white hero like a sheet with rounded top corners (starts before
