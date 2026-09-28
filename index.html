@@ -168,7 +168,11 @@ a{color:inherit}
 .h1 .price{color:var(--orange);white-space:nowrap}
 .support{margin:1.3rem 0 1.8rem;font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:34ch;color:var(--ink-2)}
 .cta-note{margin:.9rem 0 0;font-size:.95rem;color:var(--ink-2)}
-.fine{margin:1.3rem 0 0;font-size:.85rem;line-height:1.5;color:var(--ink-3);max-width:48ch}
+.fine{margin:1.3rem 0 0;font-size:.75rem;line-height:1.5;color:var(--ink-3);opacity:.7;max-width:48ch}
+@media (max-width:639px){
+  .hero-copy{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .hero .support,.hero .fine{max-width:38ch;margin-left:auto;margin-right:auto}
+}
 
 /* ============================================================
    THE RECEIPT — prints out of a slot once on load
@@ -394,7 +398,7 @@ a{color:inherit}
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
-      <div>
+      <div class="hero-copy">
         <p class="lead" data-v="lead">Need $500?</p>
         <h1 class="h1" id="hero-title" data-v="h1">What if borrowing it cost just <span class="price">$1?</span></h1>
         <p class="support" data-v="support">Borrow $500 and pay it off within 14 days. Your total cost: $1.* Why pay payday loan fees when you don't have to?</p>
@@ -406,7 +410,7 @@ a{color:inherit}
         </span>
         <!-- CONFIRM: "about 2 minutes" and "no hard credit check" match current underwriting -->
         <p class="cta-note">Apply online in about 2 minutes. No hard credit check.</p>
-        <p class="fine">*The $1 total cost applies when the full $500 is repaid within 14 days of funding, using a single payment with one $1 debit fee. Loan terms are 91 to 120 days. Maximum APR 31.99%. <a href="#terms">See full terms and a representative example.</a> Optional express deposit fee applies only if selected. Eligibility and terms apply.</p>
+        <p class="fine">*When the full $500 is paid off within 14 days. Loan term 91–120 days. Max APR 31.99%. <a href="#terms">See full terms.</a></p>
       </div>
 
       <div class="printer" aria-label="Example loan receipt">
@@ -603,7 +607,7 @@ a{color:inherit}
       <span class="well well--dark">
         <a class="btn" id="close-cta" data-cta="closing" href="https://onyx.goloans.ca/clients/application/create/v1/step/identification/"><span class="coin" aria-hidden="true">$</span>Get my $500</a>
       </span>
-      <p class="fine">*The $1 total cost applies when the full $500 is repaid within 14 days of funding, using a single payment with one $1 debit fee. Loan terms are 91 to 120 days. Maximum APR 31.99%. <a href="#terms">See full terms and a representative example.</a> Optional express deposit fee applies only if selected. Eligibility and terms apply.</p>
+      <p class="fine">*When the full $500 is paid off within 14 days. Loan term 91–120 days. Max APR 31.99%. <a href="#terms">See full terms.</a></p>
     </div>
   </section>
 </main>
