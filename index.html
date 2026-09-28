@@ -163,31 +163,28 @@ a{color:inherit}
 /* ============================================================
    HERO
    ============================================================ */
-.hero{padding:clamp(1rem,4vw,3rem) 0 clamp(3rem,7vw,6rem);position:relative}
+.hero{
+  padding:clamp(1rem,4vw,3rem) 0 clamp(3rem,7vw,6rem);position:relative;
+  background:linear-gradient(180deg, #1E7A54 0%, #14563D 100%);
+}
 .hero .wrap{display:grid;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 @media (min-width:900px){.hero .wrap{grid-template-columns:1.12fr .88fr}}
-.lead{font:600 clamp(1.25rem,2.4vw,1.6rem)/1.2 var(--display);font-stretch:110%;color:var(--ink-2);margin:0 0 .6rem}
+.lead{font:600 clamp(1.25rem,2.4vw,1.6rem)/1.2 var(--display);font-stretch:110%;color:rgba(255,255,255,.85);margin:0 0 .6rem}
 .h1{
   margin:0;font:900 clamp(3rem,8.4vw,6.4rem)/.9 var(--display);font-stretch:68%;
-  text-transform:uppercase;letter-spacing:-.005em;color:var(--brand-deep);
+  text-transform:uppercase;letter-spacing:-.005em;color:var(--white);
   max-width:11ch;
 }
 .h1 .price{color:var(--orange);white-space:nowrap}
-.support{margin:1.3rem 0 1.8rem;font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:34ch;color:var(--ink-2)}
-.fine{margin:1rem 0 0;font-size:.75rem;line-height:1.5;color:var(--ink-3);opacity:.7;max-width:48ch}
-@media (max-width:639px){
-  .hero{
-    padding:0;
-    overflow-x:hidden;
-    background:linear-gradient(180deg, #1E7A54 0%, #14563D 100%);
-  }
-  .hero .wrap{gap:0}
+.support{margin:1.3rem 0 1.8rem;font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:34ch;color:rgba(255,255,255,.92)}
+.fine{margin:1rem 0 0;font-size:.75rem;line-height:1.5;color:var(--white);opacity:.8;max-width:48ch}
 
-  /* Skyline photo sized to the copy block itself (not the whole hero, which
-     would push the photo's skyline down behind the gray shelf). A light
-     brand-green wash ties it into the palette while keeping the photo
-     readable, and text goes white for contrast against it. Anchored to the
-     bottom so real photo (not the flat fallback) always meets the shelf. */
+/* Skyline photo washed in brand green, anchored so real photo (not the flat
+   fallback) always meets whatever sits below it. Portrait crop on phones,
+   the wide panorama from 640px up. */
+@media (max-width:639px){
+  .hero{padding:0;overflow-x:hidden}
+  .hero .wrap{gap:0}
   .hero-copy{
     display:flex;flex-direction:column;align-items:center;text-align:center;
     width:100vw;margin-left:calc(50% - 50vw);
@@ -197,13 +194,9 @@ a{color:inherit}
       url('image-assets/goloans-ad-bg.webp') center bottom / cover no-repeat;
   }
   .hero .support,.hero .fine{max-width:38ch;margin-left:auto;margin-right:auto}
-  .hero-copy .lead{color:rgba(255,255,255,.85)}
-  .hero-copy .h1{color:var(--white)}
-  .hero-copy .support{color:rgba(255,255,255,.92)}
-  .hero-copy .fine{color:var(--white);opacity:.8}
 
   /* Gray shelf holds the receipt and breaks out to full viewport width, rising
-     over the white hero like a sheet with rounded top corners (starts before
+     over the photo hero like a sheet with rounded top corners (starts before
      the receipt). */
   .hero-shelf{
     width:100vw;margin-left:calc(50% - 50vw);
@@ -211,6 +204,22 @@ a{color:inherit}
     background:var(--paper);
     border-radius:40px 40px 0 0;
     box-shadow:0 -10px 24px -18px rgba(15,32,43,.35);
+  }
+}
+@media (min-width:640px) and (max-width:899px){
+  .hero-copy{
+    width:100vw;margin-left:calc(50% - 50vw);
+    padding:clamp(2.5rem,6vw,3.5rem) var(--gutter) clamp(3rem,7vw,4rem);
+    background:
+      linear-gradient(180deg, rgba(15,61,45,.3) 0%, rgba(10,38,29,.5) 100%),
+      url('image-assets/goloans-ad-for-desktop.webp') center 35% / cover no-repeat;
+  }
+}
+@media (min-width:900px){
+  .hero{
+    background:
+      linear-gradient(100deg, rgba(10,38,29,.62) 0%, rgba(10,38,29,.3) 45%, rgba(10,38,29,.62) 100%),
+      url('image-assets/goloans-ad-for-desktop.webp') center 40% / cover no-repeat;
   }
 }
 
