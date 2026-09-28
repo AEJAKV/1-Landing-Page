@@ -169,9 +169,18 @@ a{color:inherit}
 }
 .hero .wrap{display:grid;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 @media (min-width:900px){.hero .wrap{grid-template-columns:1.12fr .88fr}}
-.hero-copy{position:relative}
-.hero-grid{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.7}
-.lead{font:600 clamp(1.25rem,2.4vw,1.6rem)/1.2 var(--display);font-stretch:110%;color:rgba(255,255,255,.85);margin:0 0 .6rem}
+/* Grid + sparkle accent, spanning the whole hero (not just the copy block)
+   so it reads as one continuous backdrop behind text and receipt alike. */
+.hero-grid{position:absolute;inset:0;pointer-events:none;opacity:.4;overflow:hidden}
+.hg-line{position:absolute}
+.hg-v{top:0;bottom:0;width:1px;background:linear-gradient(180deg, transparent 0%, rgba(255,255,255,.85) 50%, transparent 100%)}
+.hg-h{left:0;right:0;height:1px;background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,.85) 50%, transparent 100%)}
+.hg-spark{position:absolute;opacity:.55;transform:translate(-50%,-50%)}
+.lead{
+  font:800 clamp(1rem,2vw,1.15rem)/1.2 var(--display);font-stretch:88%;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:#fff;margin:0 0 .75rem;
+}
 .h1{
   margin:0;font:900 clamp(3rem,8.4vw,6.4rem)/.9 var(--display);font-stretch:68%;
   text-transform:uppercase;letter-spacing:-.005em;color:var(--white);
@@ -181,18 +190,20 @@ a{color:inherit}
 .support{margin:1.3rem 0 1.8rem;font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:34ch;color:rgba(255,255,255,.92)}
 .fine{margin:1rem 0 0;font-size:.75rem;line-height:1.5;color:var(--white);opacity:.8;max-width:48ch}
 
-/* Skyline photo washed in brand green — the green sits on top of the image
-   at every breakpoint and stays the dominant color, the photo just adds
-   texture underneath. Portrait crop on phones, the wide panorama from
-   640px up. .hero itself carries the same treatment as a fallback so
-   nothing but green/photo ever peeks through (e.g. the shelf's rounded
-   corners), never a flat mismatched color. */
+/* Skyline photo turned duotone: a color-blend with a vivid green gradient
+   swaps the photo's hue for brand green while keeping its own light/dark
+   texture (buildings, water, sky) showing through underneath — same trick
+   as the CreditPulse-style reference. Portrait crop on phones, the wide
+   panorama from 640px up. .hero itself carries the same treatment as a
+   fallback so nothing but green/photo ever peeks through (e.g. the shelf's
+   rounded corners), never a flat mismatched color. */
 @media (max-width:639px){
   .hero{
     padding:0;overflow-x:hidden;
     background:
-      linear-gradient(180deg, rgba(22,94,64,.85) 0%, rgba(9,34,26,.94) 100%),
+      linear-gradient(180deg, #2FAE58 0%, #0F5C34 100%),
       url('image-assets/goloans-ad-bg.webp') center bottom / cover no-repeat;
+    background-blend-mode:color;
   }
   .hero .wrap{gap:0}
   .hero-copy{
@@ -200,8 +211,9 @@ a{color:inherit}
     width:100vw;margin-left:calc(50% - 50vw);
     padding:clamp(2rem,7vw,3rem) var(--gutter) clamp(2.25rem,6vw,3rem);
     background:
-      linear-gradient(180deg, rgba(22,94,64,.78) 0%, rgba(9,34,26,.9) 100%),
+      linear-gradient(180deg, #2FAE58 0%, #0F5C34 100%),
       url('image-assets/goloans-ad-bg.webp') center bottom / cover no-repeat;
+    background-blend-mode:color;
   }
   .hero .support,.hero .fine{max-width:38ch;margin-left:auto;margin-right:auto}
 
@@ -219,22 +231,25 @@ a{color:inherit}
 @media (min-width:640px) and (max-width:899px){
   .hero{
     background:
-      linear-gradient(180deg, rgba(22,94,64,.8) 0%, rgba(9,34,26,.92) 100%),
+      linear-gradient(180deg, #2FAE58 0%, #0F5C34 100%),
       url('image-assets/goloans-ad-for-desktop.webp') center 35% / cover no-repeat;
+    background-blend-mode:color;
   }
   .hero-copy{
     width:100vw;margin-left:calc(50% - 50vw);
     padding:clamp(2.5rem,6vw,3.5rem) var(--gutter) clamp(3rem,7vw,4rem);
     background:
-      linear-gradient(180deg, rgba(22,94,64,.74) 0%, rgba(9,34,26,.88) 100%),
+      linear-gradient(180deg, #2FAE58 0%, #0F5C34 100%),
       url('image-assets/goloans-ad-for-desktop.webp') center 35% / cover no-repeat;
+    background-blend-mode:color;
   }
 }
 @media (min-width:900px){
   .hero{
     background:
-      linear-gradient(100deg, rgba(9,34,26,.9) 0%, rgba(15,64,45,.72) 45%, rgba(9,34,26,.9) 100%),
+      linear-gradient(100deg, #0F5C34 0%, #34B563 45%, #0F5C34 100%),
       url('image-assets/goloans-ad-for-desktop.webp') center 40% / cover no-repeat;
+    background-blend-mode:color;
   }
 }
 
@@ -461,30 +476,17 @@ a{color:inherit}
 <main>
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid" aria-hidden="true">
+      <span class="hg-line hg-v" style="left:35%"></span>
+      <span class="hg-line hg-v" style="left:65%"></span>
+      <span class="hg-line hg-h" style="top:35%"></span>
+      <span class="hg-line hg-h" style="top:65%"></span>
+      <svg class="hg-spark" style="left:84%;top:10%;width:22px" viewBox="-12 -12 24 24"><path d="M0,-12 C2,-2 2,-2 12,0 C2,2 2,2 0,12 C-2,2 -2,2 -12,0 C-2,-2 -2,-2 0,-12 Z" fill="#fff"/></svg>
+      <svg class="hg-spark" style="left:35%;top:65%;width:26px" viewBox="-12 -12 24 24"><path d="M0,-12 C2,-2 2,-2 12,0 C2,2 2,2 0,12 C-2,2 -2,2 -12,0 C-2,-2 -2,-2 0,-12 Z" fill="#fff"/></svg>
+      <svg class="hg-spark" style="left:74%;top:88%;width:16px" viewBox="-12 -12 24 24"><path d="M0,-12 C2,-2 2,-2 12,0 C2,2 2,2 0,12 C-2,2 -2,2 -12,0 C-2,-2 -2,-2 0,-12 Z" fill="#fff"/></svg>
+    </div>
     <div class="wrap">
       <div class="hero-copy">
-        <svg class="hero-grid" viewBox="0 0 400 600" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="gridFadeV" gradientUnits="userSpaceOnUse" x1="0" y1="40" x2="0" y2="560">
-              <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-              <stop offset=".5" stop-color="#fff" stop-opacity=".95"/>
-              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="gridFadeH" gradientUnits="userSpaceOnUse" x1="25" y1="0" x2="375" y2="0">
-              <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-              <stop offset=".5" stop-color="#fff" stop-opacity=".95"/>
-              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-            </linearGradient>
-            <path id="gridSpark" d="M0,-12 C2,-2 2,-2 12,0 C2,2 2,2 0,12 C-2,2 -2,2 -12,0 C-2,-2 -2,-2 0,-12 Z" fill="#fff"/>
-          </defs>
-          <line x1="140" y1="40" x2="140" y2="560" stroke="url(#gridFadeV)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
-          <line x1="260" y1="40" x2="260" y2="560" stroke="url(#gridFadeV)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
-          <line x1="25" y1="210" x2="375" y2="210" stroke="url(#gridFadeH)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
-          <line x1="25" y1="390" x2="375" y2="390" stroke="url(#gridFadeH)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
-          <g transform="translate(335,68) scale(.8)"><use href="#gridSpark"/></g>
-          <g transform="translate(140,390) scale(1.05)"><use href="#gridSpark"/></g>
-          <g transform="translate(295,522) scale(.65)"><use href="#gridSpark"/></g>
-        </svg>
         <p class="lead" data-v="lead">Need $500?</p>
         <h1 class="h1" id="hero-title" data-v="h1">What if borrowing it cost just <span class="price">$1?</span></h1>
         <p class="support" data-v="support">Borrow $500 and pay it off within 14 days. Your total cost: $1.* Why pay payday loan fees when you don't have to?</p>
