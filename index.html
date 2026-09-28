@@ -190,20 +190,18 @@ a{color:inherit}
 .support{margin:1.3rem 0 1.8rem;font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:34ch;color:rgba(255,255,255,.92)}
 .fine{margin:1rem 0 0;font-size:.75rem;line-height:1.5;color:var(--white);opacity:.8;max-width:48ch}
 
-/* Skyline photo turned duotone: a color-blend with a vivid green gradient
-   swaps the photo's hue for brand green while keeping its own light/dark
-   texture (buildings, water, sky) showing through underneath — same trick
-   as the CreditPulse-style reference. Portrait crop on phones, the wide
-   panorama from 640px up. .hero itself carries the same treatment as a
-   fallback so nothing but green/photo ever peeks through (e.g. the shelf's
-   rounded corners), never a flat mismatched color. */
+/* CreditPulse-style green container: a translucent green gradient layered
+   on top of the skyline photo (not blended into it) — the photo stays a
+   photo, just seen through a tinted green sheet. Portrait crop on phones,
+   the wide panorama from 640px up. .hero itself carries the same treatment
+   as a fallback so nothing but green/photo ever peeks through (e.g. the
+   shelf's rounded corners), never a flat mismatched color. */
 @media (max-width:639px){
   .hero{
     padding:0;overflow-x:hidden;
     background:
-      linear-gradient(180deg, #2FAE58 0%, #0F5C34 100%),
+      linear-gradient(180deg, rgba(47,174,88,.82) 0%, rgba(15,92,52,.9) 100%),
       url('image-assets/goloans-ad-bg.webp') center bottom / cover no-repeat;
-    background-blend-mode:color;
   }
   .hero .wrap{gap:0}
   .hero-copy{
@@ -211,9 +209,8 @@ a{color:inherit}
     width:100vw;margin-left:calc(50% - 50vw);
     padding:clamp(2rem,7vw,3rem) var(--gutter) clamp(2.25rem,6vw,3rem);
     background:
-      linear-gradient(180deg, #2FAE58 0%, #0F5C34 100%),
+      linear-gradient(180deg, rgba(47,174,88,.78) 0%, rgba(15,92,52,.86) 100%),
       url('image-assets/goloans-ad-bg.webp') center bottom / cover no-repeat;
-    background-blend-mode:color;
   }
   .hero .support,.hero .fine{max-width:38ch;margin-left:auto;margin-right:auto}
 
@@ -231,25 +228,22 @@ a{color:inherit}
 @media (min-width:640px) and (max-width:899px){
   .hero{
     background:
-      linear-gradient(180deg, #2FAE58 0%, #0F5C34 100%),
+      linear-gradient(180deg, rgba(47,174,88,.8) 0%, rgba(15,92,52,.88) 100%),
       url('image-assets/goloans-ad-for-desktop.webp') center 35% / cover no-repeat;
-    background-blend-mode:color;
   }
   .hero-copy{
     width:100vw;margin-left:calc(50% - 50vw);
     padding:clamp(2.5rem,6vw,3.5rem) var(--gutter) clamp(3rem,7vw,4rem);
     background:
-      linear-gradient(180deg, #2FAE58 0%, #0F5C34 100%),
+      linear-gradient(180deg, rgba(47,174,88,.76) 0%, rgba(15,92,52,.84) 100%),
       url('image-assets/goloans-ad-for-desktop.webp') center 35% / cover no-repeat;
-    background-blend-mode:color;
   }
 }
 @media (min-width:900px){
   .hero{
     background:
-      linear-gradient(100deg, #0F5C34 0%, #34B563 45%, #0F5C34 100%),
+      linear-gradient(100deg, rgba(15,92,52,.85) 0%, rgba(52,181,99,.62) 45%, rgba(15,92,52,.85) 100%),
       url('image-assets/goloans-ad-for-desktop.webp') center 40% / cover no-repeat;
-    background-blend-mode:color;
   }
 }
 
