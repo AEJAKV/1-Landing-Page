@@ -181,18 +181,20 @@ a{color:inherit}
     overflow-x:hidden;
     background:linear-gradient(180deg, #1E7A54 0%, #14563D 100%);
   }
+  .hero .wrap{gap:0}
 
   /* Skyline photo sized to the copy block itself (not the whole hero, which
      would push the photo's skyline down behind the gray shelf). A light
      brand-green wash ties it into the palette while keeping the photo
-     readable, and text goes white for contrast against it. */
+     readable, and text goes white for contrast against it. Anchored to the
+     bottom so real photo (not the flat fallback) always meets the shelf. */
   .hero-copy{
     display:flex;flex-direction:column;align-items:center;text-align:center;
     width:100vw;margin-left:calc(50% - 50vw);
     padding:clamp(2rem,7vw,3rem) var(--gutter) clamp(2.25rem,6vw,3rem);
     background:
-      linear-gradient(180deg, rgba(15,61,45,.32) 0%, rgba(10,38,29,.58) 100%),
-      url('image-assets/goloans-ad-bg.webp') center 38% / cover no-repeat;
+      linear-gradient(180deg, rgba(15,61,45,.32) 0%, rgba(10,38,29,.5) 100%),
+      url('image-assets/goloans-ad-bg.webp') center bottom / cover no-repeat;
   }
   .hero .support,.hero .fine{max-width:38ch;margin-left:auto;margin-right:auto}
   .hero-copy .lead{color:rgba(255,255,255,.85)}
