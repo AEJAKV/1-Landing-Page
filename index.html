@@ -141,8 +141,15 @@ a{color:inherit}
 /* ============================================================
    HEADER
    ============================================================ */
-.top{padding:1rem 0}
+.top{padding:1rem 0;position:relative}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+@media (max-width:639px){
+  .top::after{
+    content:"";position:absolute;left:0;right:0;top:100%;height:22px;
+    background:linear-gradient(to bottom, rgba(15,47,79,.10), rgba(15,47,79,0));
+    pointer-events:none;
+  }
+}
 .logo{display:flex;align-items:center;text-decoration:none}
 .logo img{height:38px;width:auto}
 .logo .wordmark{display:none;font:900 1.5rem/1 var(--display);font-stretch:85%;color:var(--brand-deep)}
@@ -156,8 +163,9 @@ a{color:inherit}
 /* ============================================================
    HERO
    ============================================================ */
-.hero{padding:clamp(1rem,4vw,3rem) 0 clamp(3rem,7vw,6rem)}
+.hero{padding:clamp(1rem,4vw,3rem) 0 clamp(3rem,7vw,6rem);position:relative}
 .hero .wrap{display:grid;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero-curve{display:none}
 @media (min-width:900px){.hero .wrap{grid-template-columns:1.12fr .88fr}}
 .lead{font:600 clamp(1.25rem,2.4vw,1.6rem)/1.2 var(--display);font-stretch:110%;color:var(--ink-2);margin:0 0 .6rem}
 .h1{
@@ -172,6 +180,21 @@ a{color:inherit}
 @media (max-width:639px){
   .hero-copy{display:flex;flex-direction:column;align-items:center;text-align:center}
   .hero .support,.hero .fine{max-width:38ch;margin-left:auto;margin-right:auto}
+
+  /* Grid/star pattern: drop the image in image-assets/ and point this at it.
+     Sizing/position are ready to go as-is. */
+  .hero{
+    padding-bottom:calc(clamp(3rem,7vw,6rem) + 40px);
+    background-image:url('image-assets/hero-bg-mobile.png');
+    background-size:cover;
+    background-position:top center;
+    background-repeat:no-repeat;
+  }
+  .hero-curve{
+    display:block;position:absolute;left:0;right:0;bottom:-1px;
+    width:100%;height:48px;line-height:0;pointer-events:none;
+  }
+  .hero-curve svg{display:block;width:100%;height:100%}
 }
 
 /* ============================================================
@@ -435,6 +458,11 @@ a{color:inherit}
           </div>
         </div>
       </div>
+    </div>
+    <div class="hero-curve" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="var(--white)"></path>
+      </svg>
     </div>
   </section>
 
