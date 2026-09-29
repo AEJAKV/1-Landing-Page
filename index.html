@@ -30,7 +30,8 @@
 :root{
   --brand-deep:#0F2F4F;      /* CONFIRM: GoLoans primary */
   --brand-deep-2:#16426B;
-  --paper:#E9EDF1;
+  --green-deep:#123F31;
+  --paper:#F1F7F3;
   --white:#FFFFFF;
   --slip:#FDFDFB;            /* thermal-receipt paper */
   --ink:#16202B;
@@ -449,10 +450,10 @@ a{color:inherit}
 .compare-card{padding:clamp(1.5rem,3.5vw,2.6rem)}
 .compare-card,.compare-card *{text-transform:none}
 @media (min-width:900px){.compare .wrap{grid-template-columns:.82fr 1.18fr;align-items:stretch}}
-.h2{margin:0;font:900 clamp(2.3rem,5.4vw,4rem)/.95 var(--display);font-stretch:70%;text-transform:uppercase;color:var(--brand-deep)}
+.h2{margin:0;font:900 clamp(2.3rem,5.4vw,4rem)/.95 var(--display);font-stretch:70%;text-transform:uppercase;color:var(--green-deep)}
 .h2--mixed{text-transform:none;font-stretch:75%}
 .body-lg{font-size:clamp(1.05rem,1.5vw,1.18rem);color:var(--ink-2);max-width:44ch;margin:1.1rem 0 0}
-.compare .h2{max-width:10.5ch;color:var(--brand-deep);font-size:clamp(2.45rem,4.3vw,3.8rem);line-height:.96;letter-spacing:-.045em}
+.compare .h2{max-width:10.5ch;color:var(--green-deep);font-size:clamp(2.45rem,4.3vw,3.8rem);line-height:.96;letter-spacing:-.045em}
 .compare .body-lg{margin-top:1.5rem;color:var(--ink-2);line-height:1.7}
 .bars{margin:0;padding:0;list-style:none;display:grid;gap:clamp(1.35rem,2.5vw,1.8rem)}
 .bars li{position:relative;isolation:isolate;overflow:hidden;margin:-.65rem;padding:.75rem;border:1px solid transparent;border-radius:17px;transition:transform .28s cubic-bezier(.2,.75,.25,1),background .28s ease,border-color .28s ease,box-shadow .28s ease}
@@ -521,7 +522,7 @@ a{color:inherit}
   content:counter(s);display:block;margin-bottom:.4rem;
   font:900 3.6rem/1 var(--display);font-stretch:62%;color:var(--brand-deep);
 }
-.steps h3{margin:0 0 .35rem;font:800 1.35rem/1.15 var(--display);font-stretch:90%}
+.steps h3{margin:0 0 .35rem;font:800 1.35rem/1.15 var(--display);font-stretch:90%;color:var(--green-deep)}
 .steps p{margin:0;color:var(--ink-2);max-width:32ch}
 
 /* ============================================================
@@ -538,7 +539,7 @@ a{color:inherit}
 .figs dd small{display:block;margin-top:.4rem;font:500 .85rem/1.35 var(--text);color:var(--ink-3)}
 .rep{display:grid;gap:1.5rem}
 @media (min-width:900px){.rep{grid-template-columns:1fr 1fr;gap:3rem;align-items:start}}
-.rep h3{margin:0 0 .4rem;font:800 1.35rem/1.15 var(--display);font-stretch:90%}
+.rep h3{margin:0 0 .4rem;font:800 1.35rem/1.15 var(--display);font-stretch:90%;color:var(--green-deep)}
 .rep p{margin:0;color:var(--ink-2);max-width:52ch}
 .rep .r-rows{margin:0}
 .rep .total{border-top:2px dashed var(--line);margin-top:.3rem;padding-top:.7rem}
@@ -575,19 +576,19 @@ a{color:inherit}
 .banks li{padding:.45rem .8rem;border-radius:8px;background:var(--white);font-weight:600;font-size:.95rem;
   box-shadow:0 0 0 1px rgba(22,32,43,.08), 0 2px 0 rgba(22,32,43,.06)}
 .facts{margin:0;display:grid;gap:1.3rem}
-.facts dt{font:800 1rem/1.2 var(--display);font-stretch:95%;color:var(--brand-deep)}
+.facts dt{font:800 1rem/1.2 var(--display);font-stretch:95%;color:var(--green-deep)}
 .facts dd{margin:.25rem 0 0;color:var(--ink-2)}
 .facts a{font-weight:700;color:var(--brand-deep)}
 
 /* ============================================================
    CLOSING SIGNATURE
    ============================================================ */
-.sig{background:var(--brand-deep);color:#fff;padding:clamp(4rem,10vw,7.5rem) 0;overflow:hidden}
+.sig{background:linear-gradient(135deg,#123f31 0%,#176244 48%,#0d382c 100%);color:#fff;padding:clamp(4rem,10vw,7.5rem) 0;overflow:hidden}
 .sig-line{margin:0;font:900 clamp(4rem,15vw,12rem)/.84 var(--display);font-stretch:62%;text-transform:uppercase;letter-spacing:-.01em}
 .sig-line span{display:block}
 .sig-line .one{color:var(--orange)}
-.sig-sub{margin:1.6rem 0 2rem;font:700 clamp(1.3rem,2.6vw,1.8rem)/1.2 var(--display);font-stretch:105%;color:#CFE0F0}
-.sig .fine{color:#9FB6CC}
+.sig-sub{margin:1.6rem 0 2rem;font:700 clamp(1.3rem,2.6vw,1.8rem)/1.2 var(--display);font-stretch:105%;color:#d7eee2}
+.sig .fine{color:#b7d0c4}
 
 /* ============================================================
    PAGE MOTION + INTERACTION SYSTEM
