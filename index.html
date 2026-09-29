@@ -198,12 +198,8 @@ a{color:inherit}
 .hero-question{
   display:block;width:max-content;margin:0 0 .14em;
   font:inherit;letter-spacing:inherit;
-  color:#ff9b42;background:linear-gradient(100deg,#f4741a 0%,#ffb45f 35%,#ffe0a3 50%,#ffad57 68%,#f4741a 100%);
-  background-size:240% 100%;-webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;animation:lead-shimmer 3.2s ease-in-out infinite;
+  color:#f47621;
 }
-@keyframes lead-shimmer{0%,15%{background-position:100% 0}85%,100%{background-position:-100% 0}}
-@media (prefers-reduced-motion:reduce){.hero-question{animation:none;background:none;-webkit-text-fill-color:#ff9b42}}
 .h1{
   margin:0;font:700 clamp(3rem,5.4vw,4.8rem)/1.04 var(--display);
   letter-spacing:-.055em;color:var(--white);max-width:13ch;text-wrap:balance;
@@ -805,7 +801,7 @@ a{color:inherit}
         </li>
         <li>
           <h3>Pay it off within 14 days</h3>
-          <p>Pay back the $500 by <strong data-repay-long>14 days from today</strong> and your total cost is $1.* Need longer? Your loan runs 91 to 120 days.</p>
+          <p>Pay back the $500 <strong>within 14 days</strong> and your total cost is $1.* Need longer? Your loan runs 91 to 120 days.</p>
         </li>
       </ol>
     </div>
@@ -944,7 +940,6 @@ a{color:inherit}
   var LOAN = 500;
   var PAYDAY_FEE_PER_100 = 14;   // VERIFY BEFORE LAUNCH: federal cap as of Jan 1, 2025
   var GO_FEE = 1;
-  var TERM_DAYS = 14;
 
   window.dataLayer = window.dataLayer || [];
   function track(ev, data){ var o = {event: ev}; for (var k in data) o[k] = data[k]; window.dataLayer.push(o); }
@@ -968,14 +963,8 @@ a{color:inherit}
   document.querySelectorAll("[data-payday]").forEach(function(el){ el.textContent = "$" + paydayFee; });
   document.querySelectorAll("[data-save]").forEach(function(el){ el.textContent = "$" + (paydayFee - GO_FEE); });
 
-  /* ---------- Dates ---------- */
+  /* ---------- Current year ---------- */
   var today = new Date();
-  var due = new Date(today); due.setDate(due.getDate() + TERM_DAYS);
-  var shortFmt = {month:"short", day:"numeric", year:"numeric"};
-  var longFmt  = {weekday:"long", month:"long", day:"numeric"};
-  document.querySelectorAll("[data-today]").forEach(function(el){ el.textContent = today.toLocaleDateString("en-CA", shortFmt); });
-  document.querySelectorAll("[data-repay]").forEach(function(el){ el.textContent = due.toLocaleDateString("en-CA", {month:"short", day:"numeric"}); });
-  document.querySelectorAll("[data-repay-long]").forEach(function(el){ el.textContent = due.toLocaleDateString("en-CA", longFmt); });
   document.querySelectorAll("[data-year]").forEach(function(el){ el.textContent = today.getFullYear(); });
 
   /* ---------- Retargeting variant: ?v=return ---------- */
@@ -988,11 +977,10 @@ a{color:inherit}
   }
 
   /* ---------- Payday check ---------- */
-  var dueLong = due.toLocaleDateString("en-CA", longFmt);
   var answers = {
     "1": 'Borrow $500 today and pay it off on payday. That\'s well inside 14 days, so your total cost is <span class="figure">$1</span>.',
-    "2": 'Pay off the $500 on payday, before ' + dueLong + ', and your total cost is <span class="figure">$1</span>.',
-    "3": 'No problem. Your loan runs 91 to 120 days, so you can repay on your regular schedule. The $1 total applies if you pay it off by ' + dueLong + '; otherwise the standard cost applies. <a href="#terms">See the full terms.</a>'
+    "2": 'Pay off the $500 on payday, within 14 days of receiving it, and your total cost is <span class="figure">$1</span>.',
+    "3": 'No problem. Your loan runs 91 to 120 days, so you can repay on your regular schedule. The $1 total applies if you pay it off within 14 days of receiving it; otherwise the standard cost applies. <a href="#terms">See the full terms.</a>'
   };
   var keys = document.querySelectorAll("[data-pay]");
   var box = document.getElementById("answer"), txt = document.getElementById("answer-text");
