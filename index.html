@@ -513,9 +513,12 @@ a{color:inherit}
 .keep:focus-visible{transform:translateY(-2px)}
 @media (prefers-reduced-motion:reduce){.bars li,.bars li::before,.bar-label strong,.bar-track,.bar-fill,.keep{transition:none}.bar--payday .bar-fill{animation:none}}
 @media (max-width:639px){
+  .compare .wrap{gap:1.75rem}
   .compare-visual{min-height:35rem;border-radius:22px;background-position:58% center}
   .compare-intro{left:1rem;right:1rem;bottom:1rem;width:auto;padding:1.35rem;border-radius:20px}
-  .compare-card{border-radius:22px}
+  .compare-card{padding:1rem;border-radius:22px}
+  .compare-card .bars{gap:1rem}
+  .compare-card .bars li{margin:0;padding:1rem;border-radius:17px}
   .compare .h2{max-width:10ch}
   .compare .compare-intro .h2{max-width:13ch}
 }
